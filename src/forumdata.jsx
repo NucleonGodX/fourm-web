@@ -1,4 +1,4 @@
-export default {"data":[{
+let data=[{
     "heading":"how to learn javascript",
     "content":"i want to learn bla blah blah"
 }
@@ -21,4 +21,8 @@ export default {"data":[{
 {
     "heading":"how to learn javascript",
     "content":"i want to learn bla blah blah"
-}]}
+}]
+data.push({"heading":"how to append",
+"content":"XDDDDDDDDD"})
+
+export default data

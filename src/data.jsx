@@ -1,13 +1,13 @@
 import React from 'react'
 import { useEffect,useState } from 'react'
-import forumdata from './forumdata'
+import data from "./forumdata"
 
 
 export default function Data() {
-const [allForums, setAllForums]=React.useState(forumdata)
+const [allForums, setAllForums]=React.useState(data)
     const [myData, setMyData]=React.useState([])
 
-    const forumData=allForums.data
+    const forumData=allForums
 
     return(  <>
         {forumData.map((entry)=>{

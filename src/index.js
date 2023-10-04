@@ -7,6 +7,7 @@ import About from './pages/About';
 import Login from './pages/auth/Login';
 import SignUp from './pages/auth/Sign-up';
 import Layout from './components/Layout';
+import ForumPage from './pages/forumPage';
 
 
 
@@ -30,7 +31,11 @@ const router = createBrowserRouter([
   {
     path:"/Sign-up",
     element:<SignUp/>
-  }]}
+  },
+  {
+  path:"/forumpage",
+  element:<ForumPage/>  }
+  ]}
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
