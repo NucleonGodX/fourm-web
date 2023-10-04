@@ -1,6 +1,7 @@
 import React from "react";
+import Data from "../data";
 export default function Home(){
     return(
-<h1>home</h1>
+<Data/>
     )
 }
