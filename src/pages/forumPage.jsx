@@ -5,10 +5,12 @@ export default function ForumPage() {
   const [heading, setHeading] = useState('');
   const [content, setContent] = useState('');
 
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newPost = { heading, content };
     data.push(newPost);
+  
     setHeading('');
     setContent('');
   };
@@ -29,5 +31,4 @@ export default function ForumPage() {
       />
       <button type="submit">Submit</button>
     </form>
-  );
-}
+  ) }
