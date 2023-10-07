@@ -4,10 +4,10 @@ import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
-import Login from './pages/auth/Login';
-import SignUp from './pages/auth/Sign-up';
+import SignUp from './pages/auth/SignUp';
 import Layout from './components/Layout';
 import ForumPage from './pages/forumPage';
+import SignIn from './pages/auth/SignIn';
 
 
 
@@ -25,11 +25,11 @@ const router = createBrowserRouter([
     element: <About/>,
   },
   {
-    path: "/login",
-    element: <Login/>,
+    path: "/SignIn",
+    element: <SignIn/>,
   },
   {
-    path:"/Sign-up",
+    path:"/SignUp",
     element:<SignUp/>
   },
   {

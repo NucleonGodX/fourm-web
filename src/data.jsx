@@ -1,13 +1,11 @@
 import React from 'react'
 import { useEffect,useState } from 'react'
-import data from "./forumdata"
 import { Link } from 'react-router-dom'
 import "./xD.png"
 export default function Data() {
     const [allForums, setAllForums] = useState([]);
 
 useEffect(() => {
-  // Fetch forum data from local storage when the component mounts
   const forumDataFromLocalStorage = JSON.parse(localStorage.getItem('data')) || [];
   setAllForums(forumDataFromLocalStorage);
 }, []);
