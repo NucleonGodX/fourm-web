@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+background-image{
+    url:("https://imgs.search.brave.com/RdFWDoN5469flQSxN2a2xDE6u3ct9Gqcewt451zAZGs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9ncmVlbi1lbnZp/cm9ubWVudGFsLWZy/aWVuZGx5LWJ1c2lu/ZXNzLXRlY2hub2xv/Z3ktYWJzdHJhY3Qt/YmFja2dyb3VuZC1l/bGVtZW50c18zMTk2/NS0yMjUyMC5qcGc_/c2l6ZT02MjYmZXh0/PWpwZw")
+}

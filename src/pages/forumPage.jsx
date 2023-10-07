@@ -7,10 +7,13 @@ export default function ForumPage() {
 
  
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault();    
+
     const newPost = { heading, content };
-    data.push(newPost);
-  
+    const existingData = JSON.parse(localStorage.getItem('data')) || [];
+    existingData.push(newPost);
+    localStorage.setItem('data', JSON.stringify(existingData));
+
     setHeading('');
     setContent('');
   };
