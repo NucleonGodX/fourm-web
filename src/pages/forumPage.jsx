@@ -5,6 +5,7 @@ export default function ForumPage() {
   const [heading, setHeading] = useState('');
   const [content, setContent] = useState('');
 
+
  
   const handleSubmit = (e) => {
     e.preventDefault();    
