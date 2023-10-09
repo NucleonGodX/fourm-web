@@ -29,7 +29,7 @@ function App() {
         },
         {
           path: "/SignIn",
-          element: <SignIn />,
+          element: <SignIn setIsAuthenticated={setIsAuthenticated}/>,
         },
         {
           path: "/SignUp",
