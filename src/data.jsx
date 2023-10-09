@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import unfilled from "./unfilled_upvote.svg";
 import filled from "./upvote_filled.svg";
 
-export default function Data() {
+export default function Data({isAuthenticated}) {
   const [reversedForums, setReversedForums] = useState([]);
 
   useEffect(() => {
@@ -21,10 +21,9 @@ export default function Data() {
     updatedForums[index].upvoted = !updatedForums[index].upvoted;
     setReversedForums(updatedForums);
   }
-
   return (
     <div className='flex flex-col items-center bg-black'>     
-    <Link to="/forumpage" className='text-black p-3 rounded-xl bg-white '>Create Post</Link>
+    {isAuthenticated?<Link to="/forumpage" className='text-black p-3 rounded-xl bg-white '>Create Post</Link>:null}
       {reversedForums.map((entry, index) => (
         <div key={index} className='min-h-[30rem] w-[50rem] bg-red my-5 px-20 py-10  bg-slate-800 flex flex-col inset-x-50 text-white'>
           <h1 className=' flex '> <h2 className='text-rgb(105,105,105) px-1'>Posted by </h2> {entry.username}</h1>

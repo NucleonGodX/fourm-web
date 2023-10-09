@@ -4,18 +4,32 @@ import { Link, json } from 'react-router-dom'
 import auth from '../../firebase'
 import "../../index.css"
 import { sendEmailVerification } from 'firebase/auth'
+import { useNavigate } from "react-router-dom";
 
-export default function SignUp() {
+
+export default function SignUp({setIsAuthenticated}) {
+
+
+  const navigate = useNavigate();
+
   const [email, setEmail]=useState("")
   const [password, setPassword]=useState("")
   const [name, setName]=useState("")
   localStorage.removeItem('name')
+  localStorage.removeItem('email')
+  localStorage.removeItem('password')
+
   localStorage.setItem('name',JSON.stringify(name))
+  localStorage.setItem('email',JSON.stringify(email))
+  localStorage.setItem('password',JSON.stringify(password))
 function signUp(e){
   e.preventDefault();
   createUserWithEmailAndPassword(auth, email, password, name)
   .then((userCredential)=>{
-    window.location = "/";
+  
+    setIsAuthenticated(true)
+    navigate('/')
+
 
   })
   .catch((error)=>

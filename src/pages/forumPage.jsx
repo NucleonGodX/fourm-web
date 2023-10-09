@@ -4,13 +4,13 @@ import data from '../forumdata';
 export default function ForumPage() {
   const [heading, setHeading] = useState('');
   const [content, setContent] = useState('');
-
+  const[username, setUsername]=useState(JSON.parse(localStorage.getItem('name')))
 
  
   const handleSubmit = (e) => {
     e.preventDefault();    
 
-    const newPost = { heading, content };
+    const newPost = { heading, content, username };
     const existingData = JSON.parse(localStorage.getItem('data')) || [];
     existingData.push(newPost);
     localStorage.setItem('data', JSON.stringify(existingData));

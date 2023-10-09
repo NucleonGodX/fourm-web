@@ -4,11 +4,10 @@ import Header from "./Header"
 import LoggedHeader from "./LoggedHeader";
 import { useState } from "react";
 
-export default function Layout(){
-    const[isLogged, setIsLogged]=useState(false)
+export default function Layout({isAuthenticated}){
     return(<>
     
-    <LoggedHeader />
+    {isAuthenticated?<LoggedHeader/>:<Header/>}
     <main>
     <Outlet/></main>
 </>)
