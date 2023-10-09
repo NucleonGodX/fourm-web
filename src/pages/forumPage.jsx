@@ -13,10 +13,13 @@ export default function ForumPage() {
     const newPost = { heading, content, username };
     const existingData = JSON.parse(localStorage.getItem('data')) || [];
     existingData.push(newPost);
+    localStorage.removeItem('data')
+
     localStorage.setItem('data', JSON.stringify(existingData));
 
     setHeading('');
     setContent('');
+
   };
 
   return (

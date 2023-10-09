@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import unfilled from "./unfilled_upvote.svg";
 import filled from "./upvote_filled.svg";
 import comms from "./pngegg.png"
+import data from './forumdata';
 
 export default function Data({isAuthenticated}) {
   const [reversedForums, setReversedForums] = useState([]);
@@ -43,8 +44,9 @@ export default function Data({isAuthenticated}) {
           <h1 className='text-4xl  text-yellow-400'>{entry.heading}</h1>
           <p className='text-2xl p-5'>{entry.content}</p>
           <img className='h-7 w-7  ' onClick={() => handleComments(index)} src={comms}/>
-          {entry.comment ? (
+          {entry.comment ? (<div>
             <h1>{entry.comments.user}</h1>
+            <h1>{entry.comments.sentence}</h1></div>
           ) : (
             <h1></h1>
           )}
