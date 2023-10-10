@@ -7,6 +7,7 @@ import data from './forumdata';
 
 export default function Data({isAuthenticated}) {
   const [reversedForums, setReversedForums] = useState([]);
+  const[coments, setComents]=useState([])
 
   useEffect(() => {
     const forumDataFromLocalStorage = JSON.parse(localStorage.getItem('data')) || [];
@@ -30,6 +31,9 @@ export default function Data({isAuthenticated}) {
     setReversedForums(updatedForums);
 
   }
+
+  function handleSubmit(coments){
+  }
   return (
     <div className='flex flex-col items-center bg-black'>     
     {isAuthenticated?<Link to="/forumpage" className='text-black p-3 rounded-xl bg-white absolute left-2 top-[7rem]'>Create Post</Link>:null}
@@ -43,13 +47,28 @@ export default function Data({isAuthenticated}) {
           )}
           <h1 className='text-4xl  text-yellow-400'>{entry.heading}</h1>
           <p className='text-2xl p-5'>{entry.content}</p>
-          <img className='h-7 w-7  ' onClick={() => handleComments(index)} src={comms}/>
-          {entry.comment ? (<div>
-            <h1>{entry.comments.user}</h1>
-            <h1>{entry.comments.sentence}</h1></div>
-          ) : (
-            <h1></h1>
-          )}
+          <div className='flex'><img className='h-7 w-7  ' onClick={() => handleComments(index)} src={comms}/><h1>Comments</h1></div>
+          {entry.comment ? (
+  <div>
+    {entry.comments.user.map((user, commentIndex) => (
+      <div key={commentIndex}>
+        <p> {user}</p>
+        <p className='pb-4'> {entry.comments.sentence[commentIndex]}</p>
+        
+      </div>
+    ))}{isAuthenticated?
+    <div>
+<input
+        type="text"
+        value={coments}
+        onChange={(e) => setComents(e.target.value)}
+      />
+      <button >Submit</button></div>:null}
+
+  </div>
+) : (
+  <h1></h1>
+)}
         </div>
       ))}
 
