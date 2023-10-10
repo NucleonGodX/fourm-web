@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import unfilled from "./unfilled_upvote.svg";
 import filled from "./upvote_filled.svg";
 import comms from "./pngegg.png"
-import data from './forumdata';
+import AddInitialData from './forumdata';
+
 
 export default function Data({isAuthenticated}) {
+
   const [reversedForums, setReversedForums] = useState([]);
   const[coments, setComents]=useState([])
 
@@ -36,7 +38,7 @@ export default function Data({isAuthenticated}) {
   }
   return (
     <div className='flex flex-col items-center bg-black'>     
-    {isAuthenticated?<Link to="/forumpage" className='text-black p-3 rounded-xl bg-white absolute left-2 top-[7rem]'>Create Post</Link>:null}
+    {isAuthenticated?<Link to="/forumpage" className='text-black p-3 rounded-xl bg-white absolute left-2 top-[7rem]'>Create Post</Link>:<h1 className='text-white absolute left-2 top-[7rem]'>Kindly Login Or Register to Create A Post!</h1>}
       {reversedForums.map((entry, index) => (
         <div key={index} className=' w-[50rem] bg-red my-5 px-20 py-10  bg-slate-800 flex flex-col inset-x-50 text-white'>
           <h1 className=' flex '> <h2 className='text-rgb(105,105,105) px-1'>Posted by </h2> {entry.username}</h1>
@@ -58,12 +60,8 @@ export default function Data({isAuthenticated}) {
       </div>
     ))}{isAuthenticated?
     <div>
-<input
-        type="text"
-        value={coments}
-        onChange={(e) => setComents(e.target.value)}
-      />
-      <button >Submit</button></div>:null}
+
+</div>:null}
 
   </div>
 ) : (
@@ -75,3 +73,4 @@ export default function Data({isAuthenticated}) {
     </div>
   );
 }
+

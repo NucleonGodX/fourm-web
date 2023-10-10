@@ -23,19 +23,21 @@ export default function ForumPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Create Your Forum</h1>
+    <form className="flex flex-col items-center bg-slate-800 text-white space-y-6" onSubmit={handleSubmit}>
+      <h1 className='text-xl'>Create Your Post</h1>
       <h2>Title</h2>
-      <input
+      <input 
+      className='text-black w-[20rem]  h-[5rem] rounded-3xl'
         type="text"
         value={heading}
         onChange={(e) => setHeading(e.target.value)}
       />
       <h2>Content</h2>
       <textarea
+      className='w-[50rem]  h-[35rem] rounded-3xl text-black'
         value={content}
         onChange={(e) => setContent(e.target.value)}
       />
-      <button type="submit">Submit</button>
+      <button type="submit" className='bg-slate-500 p-5 rounded-xl'>Submit</button>
     </form>
   ) }

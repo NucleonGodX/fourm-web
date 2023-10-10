@@ -10,7 +10,6 @@ export default function LoggedHeader(){
         <NavLink to='/' className='car-head'>#YourFourms</NavLink>
         <hr/>
         <div className="flex space-x-8">
-        <NavLink to="/about" className={({isActive})=>isActive?" underline text-yellow-300": null}>About</NavLink>
         <hr/>
         <NavLink to="/user" className={({isActive})=>isActive?" underline text-yellow-300": null}><div className="flex "><img className='h-8 w-8 mx-2' src={profile}/>{JSON.parse(localStorage.getItem('name'))}</div></NavLink>
 
