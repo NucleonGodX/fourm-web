@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import data from '../forumdata';
-import {useNavigate} from react-router-dom;
+import {useNavigate} from 'react-router-dom';
 
 export default function ForumPage() {
   const [heading, setHeading] = useState('');
   const [content, setContent] = useState('');
   const[username, setUsername]=useState(JSON.parse(localStorage.getItem('name')))
-  const navigate=useNavigate()
+    const navigate=useNavigate()
 
  
   const handleSubmit = (e) => {
