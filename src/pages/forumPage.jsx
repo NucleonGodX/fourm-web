@@ -6,6 +6,7 @@ export default function ForumPage() {
   const [heading, setHeading] = useState('');
   const [content, setContent] = useState('');
   const[username, setUsername]=useState(JSON.parse(localStorage.getItem('name')))
+  const navigate=useNavigate()
 
  
   const handleSubmit = (e) => {
@@ -20,7 +21,7 @@ export default function ForumPage() {
 
     setHeading('');
     setContent('');
-
+    navigate('/')
   };
 
   return (
