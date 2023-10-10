@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import data from '../forumdata';
+import {useNavigate} from react-router-dom;
 
 export default function ForumPage() {
   const [heading, setHeading] = useState('');
