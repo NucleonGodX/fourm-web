@@ -26,15 +26,20 @@ function signUp(e){
   e.preventDefault();
   createUserWithEmailAndPassword(auth, email, password, name)
   .then((userCredential)=>{
-  
+    if(userCredential){
     setIsAuthenticated(true)
     navigate('/')
+}
+  else{
+    alert("Invalid login")
 
+  }
 
   })
   .catch((error)=>
   console.log(error))
   .then(() => {
+
     console.log("email verification sent")
   })
 

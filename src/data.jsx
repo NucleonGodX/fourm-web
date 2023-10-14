@@ -41,14 +41,14 @@ export default function Data({isAuthenticated}) {
     {isAuthenticated?<Link to="/forumpage" className='text-black p-3 rounded-xl bg-white absolute left-2 top-[7rem]'>Create Post</Link>:<h1 className='text-white absolute left-2 top-[7rem]'>Kindly Login Or Register to Create A Post!</h1>}
       {reversedForums.map((entry, index) => (
         <div key={index} className=' w-[50rem] bg-red my-5 px-20 py-10  bg-slate-800 flex flex-col inset-x-50 text-white'>
-          <h1 className=' flex '> <h2 className='text-rgb(105,105,105) px-1'>Posted by </h2> {entry.username}</h1>
+          <h1 className=' flex '> <h2 className='text-rgb(105,105,105) px-1'>Posted by </h2>  <Link to={`/${entry.id}`}>{entry.username}</Link></h1>
           {entry.upvoted ? (
             <img className='h-7 w-7 absolute inset-x-[24rem] ' onClick={() => handleUpvote(index)} src={filled} />
           ) : (
             <img className='h-7 w-7 absolute inset-x-[24rem] ' onClick={() => handleUpvote(index)} src={unfilled} />
           )}
           <Link to={`/${entry.id}`}><h1 className='text-4xl  text-yellow-400'>{entry.heading}</h1></Link>
-          <p className='text-2xl p-5'>{entry.content}</p>
+          <Link to={`/${entry.id}`}><p className='text-2xl p-5'>{entry.content}</p></Link>
           <div className='flex'><img className='h-7 w-7  ' onClick={() => handleComments(index)} src={comms}/><h1>Comments</h1></div>
           {entry.comment ? (
   <div>

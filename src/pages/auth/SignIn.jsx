@@ -24,9 +24,17 @@ function signIn(e){
     console.log(userCredential)
     setIsAuthenticated(true)
     navigate('/')
+    if (userCredential){
+      console.log("done")
+    }
+    else{
+      alert("invalid login")
+    }
   })
   .catch((error)=>
-  console.log(error))
+  alert("Invalid Login"))    
+
+
 }
 
 function resetPass(){
