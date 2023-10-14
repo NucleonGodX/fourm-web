@@ -13,11 +13,9 @@ export default function ForumPage() {
     e.preventDefault();    
 
     const newPost = { heading, content, username };
-    const existingData = JSON.parse(localStorage.getItem('data')) || [];
+    const existingData = localStorage.getItem('newData')?JSON.parse(localStorage.getItem('newData')):JSON.parse(localStorage.getItem('data')) || [];
     existingData.push(newPost);
-    localStorage.removeItem('data')
-
-    localStorage.setItem('data', JSON.stringify(existingData));
+    localStorage.setItem('newData', JSON.stringify(existingData));
 
     setHeading('');
     setContent('');

@@ -4,7 +4,7 @@ import unfilled from "./unfilled_upvote.svg";
 import filled from "./upvote_filled.svg";
 import comms from "./pngegg.png"
 import AddInitialData from './forumdata';
-
+import data from './forumdata';
 
 export default function Data({isAuthenticated}) {
 
@@ -12,7 +12,7 @@ export default function Data({isAuthenticated}) {
   const[coments, setComents]=useState([])
 
   useEffect(() => {
-    const forumDataFromLocalStorage = JSON.parse(localStorage.getItem('data')) || [];
+    const forumDataFromLocalStorage = localStorage.getItem('newData')?JSON.parse(localStorage.getItem('newData')):JSON.parse(localStorage.getItem('data')) || [];
     const forumsWithUpvote = forumDataFromLocalStorage.map(entry => ({
       ...entry,
       upvoted: false,
@@ -74,3 +74,4 @@ export default function Data({isAuthenticated}) {
   );
 }
 
+localStorage.setItem('data',JSON.stringify(data))
