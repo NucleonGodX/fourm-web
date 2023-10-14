@@ -52,16 +52,23 @@ export default function Data({isAuthenticated}) {
           <div className='flex'><img className='h-7 w-7  ' onClick={() => handleComments(index)} src={comms}/><h1>Comments</h1></div>
           {entry.comment ? (
   <div>
-    {entry.comments.user.map((user, commentIndex) => (
-      <div key={commentIndex}>
-        <p> {user}</p>
-        <p className='pb-4'> {entry.comments.sentence[commentIndex]}</p>
-        
-      </div>
-    ))}{isAuthenticated?
-    <div>
+    {entry.comment ? (
+  <div>
+    {entry.comments && entry.comments.user && entry.comments.sentence ? (
+      entry.comments.user.map((user, commentIndex) => (
+        <div key={commentIndex}>
+          <p>{user}</p>
+          <p className='pb-4'>{entry.comments.sentence[commentIndex]}</p>
+        </div>
+      ))
+    ) : (
+      <p>No comments</p>
+    )}
+  </div>
+) : (
+  <p>No comments</p>
+)}
 
-</div>:null}
 
   </div>
 ) : (
@@ -74,4 +81,3 @@ export default function Data({isAuthenticated}) {
   );
 }
 
-localStorage.setItem('data',JSON.stringify(data))
