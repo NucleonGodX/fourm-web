@@ -56,8 +56,8 @@ export default function Data({isAuthenticated}) {
   <div>
     {entry.comments && entry.comments.user && entry.comments.sentence ? (
       entry.comments.user.map((user, commentIndex) => (
-        <div key={commentIndex}>
-          <p>{user}</p>
+        <div key={commentIndex} className='px-10'>
+          <p >{user}</p>
           <p className='pb-4'>{entry.comments.sentence[commentIndex]}</p>
         </div>
       ))

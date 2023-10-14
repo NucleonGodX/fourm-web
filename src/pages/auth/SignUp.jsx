@@ -26,20 +26,15 @@ function signUp(e){
   e.preventDefault();
   createUserWithEmailAndPassword(auth, email, password, name)
   .then((userCredential)=>{
-    if(userCredential){
+  
     setIsAuthenticated(true)
     navigate('/')
-}
-  else{
-    alert("Invalid login")
 
-  }
 
   })
   .catch((error)=>
   console.log(error))
   .then(() => {
-
     console.log("email verification sent")
   })
 
@@ -55,7 +50,7 @@ function signUp(e){
         <input className='email' type='email' placeholder='Email Address' value={email} onChange={(e)=>setEmail(e.target.value)}/>
         <input className='pass' type='password' placeholder='Password' value={password} onChange={(e)=>setPassword(e.target.value)}/>
         <button className='log-button' type='submit' > Create Account </button>
-    <p className='already-account'>Already have an account?  <Link to="/sign-in" className='already-button'>Sign In</Link></p>
+    <p className='already-account'>Already have an account?  <Link to="/SignIn" className='already-button'>Sign In</Link></p>
       </form> 
     </div>
     <div className='left-top'></div>
