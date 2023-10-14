@@ -47,7 +47,7 @@ export default function Data({isAuthenticated}) {
           ) : (
             <img className='h-7 w-7 absolute inset-x-[24rem] ' onClick={() => handleUpvote(index)} src={unfilled} />
           )}
-          <h1 className='text-4xl  text-yellow-400'>{entry.heading}</h1>
+          <Link to={`/${entry.id}`}><h1 className='text-4xl  text-yellow-400'>{entry.heading}</h1></Link>
           <p className='text-2xl p-5'>{entry.content}</p>
           <div className='flex'><img className='h-7 w-7  ' onClick={() => handleComments(index)} src={comms}/><h1>Comments</h1></div>
           {entry.comment ? (
@@ -81,3 +81,4 @@ export default function Data({isAuthenticated}) {
   );
 }
 
+localStorage.setItem('data',JSON.stringify(data))

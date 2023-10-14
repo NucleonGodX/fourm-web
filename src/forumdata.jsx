@@ -1,5 +1,5 @@
 let data=[{
-    
+    "id":"1",
     "heading":"ELI5: Why is lot drawing fair.",
     "username":"VaguePasta",
     "content":"So I came across this problem: 10 people drawing lots, and there is one winner. As I understand it, the first person has a 1/10 chance of winning, and if they don't, there's 9 pieces left, and the second person will have a winning chance of 1/9, and so on. It seems like the chance for each person winning the lot increases after each unsuccessful draw until a winner appears. As far as I know, each person has an equal chance of winning the lot, but my brain can't really compute."
@@ -12,7 +12,8 @@ let data=[{
 }
 ,
 {
-    
+    "id":"2",
+
     "heading":"Who becomes the face of the NBA once LeBron retires?",
     "username":"akash",
     "content":"While there seems to be no limit on LeBron's longevity at the moment, realistically, he's nearing on his way out. My immediate thought was a young, exciting, explosive star like Ja, but his off the court antics definitely sway his growth as a superstar in the league."
@@ -25,7 +26,8 @@ let data=[{
 },
 
 {
-    
+    "id":"3",
+
     "heading":"how to learn javascript",
     "username":"sarthi",
     "content":"i want to learn javascript cam anyone suggest some good videos that they actually went throught, and it helped them?"
@@ -40,9 +42,10 @@ let data=[{
 
 
 {
+    "id":"4",
 
     "heading":"tesla ",    
-    "username":"jayash",
+    "username":"jayashi",
     "content":"Telesat and SpaceX Announce 14-Launch Agreement for Advanced Telesat Lightspeed LEO Satellites"
     ,"upvote":false
     ,"comments":{

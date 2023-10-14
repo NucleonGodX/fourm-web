@@ -7,12 +7,12 @@ export default function ForumPage() {
   const [content, setContent] = useState('');
   const[username, setUsername]=useState(JSON.parse(localStorage.getItem('name')))
     const navigate=useNavigate()
-
+  const id = Math.random() * 100
  
   const handleSubmit = (e) => {
     e.preventDefault();    
 
-    const newPost = { heading, content, username };
+    const newPost = { heading, content, username, id };
     const existingData = localStorage.getItem('newData')?JSON.parse(localStorage.getItem('newData')):JSON.parse(localStorage.getItem('data')) || [];
     existingData.push(newPost);
     localStorage.setItem('newData', JSON.stringify(existingData));

@@ -11,6 +11,7 @@ import SignIn from './pages/auth/SignIn';
 import UserPage from './pages/UserPage';
 
 import { useState } from 'react';
+import Post from './components/Post';
 
 function App() {
   const [isAuthenticated,setIsAuthenticated]=useState(false)
@@ -42,7 +43,9 @@ function App() {
         {
           path:'/user',
           element:<UserPage setIsAuthenticated={setIsAuthenticated}/>
-        }
+        },
+        {path:"/:id",
+         element:<Post/>}
       ]
     }
   ]);
