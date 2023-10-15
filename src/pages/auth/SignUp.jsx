@@ -43,19 +43,19 @@ function signUp(e){
 
 
   return(<div className='sign-up'>
-    <div className='sign-up-container'>
-      <form  className='container-items'onSubmit={signUp}>        
-        <h1 className='account-head'>Create An Account </h1>
-        <input className='name' placeholder='Username' value={name} onChange={(e)=>setName(e.target.value)}/>
-        <input className='email' type='email' placeholder='Email Address' value={email} onChange={(e)=>setEmail(e.target.value)}/>
-        <input className='pass' type='password' placeholder='Password' value={password} onChange={(e)=>setPassword(e.target.value)}/>
-        <button className='log-button' type='submit' > Create Account </button>
-    <p className='already-account'>Already have an account?  <Link to="/SignIn" className='already-button'>Sign In</Link></p>
-      </form> 
-    </div>
-    <div className='left-top'></div>
-    <div className='right-top'></div>
-    </div>
+  <div className='sign-up-container'>
+    <form className='container-items' onSubmit={signUp}>
+      <h1 className='account-head'>Create An Account</h1>
+      <input className='name' placeholder='Username' value={name} onChange={(e) => setName(e.target.value)} />
+      <input className='email' type='email' placeholder='Email Address' value={email} onChange={(e) => setEmail(e.target.value)} />
+      <input className='pass' type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+      <button className='log-button' type='submit'>Create Account</button>
+      <p className='already-account'>Already have an account? <Link to="/SignIn" className='already-button'>Sign In</Link></p>
+    </form>
+  </div>
+  <div className='left-top'></div>
+  <div className='right-top'></div>
+</div>
     
   )
 
