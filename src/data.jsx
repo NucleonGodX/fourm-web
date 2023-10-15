@@ -79,7 +79,7 @@ export default function Data({ isAuthenticated }) {
               }
             </div>
           ) : (
-            <p className='px-5 py-2'>No comments</p>
+            <p className='px-5 py-2'></p>
           )}
         </div>
       ))}

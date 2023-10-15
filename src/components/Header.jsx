@@ -1,16 +1,30 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-export default function Header(){
-    return(
-        <header className='flex flex-wrap items-center justify-between p-5 bg-slate-900 text-white text-2xl'>
-        <NavLink to='/' className='car-head'>#PostEZEN</NavLink>
-        <hr/>
-        <div className="flex space-x-8">
-        <hr/>
-        <NavLink to= "/SignIn" className={({isActive})=>isActive?" underline text-yellow-300": null}>Login</NavLink>
-        <hr/>
-        <NavLink to="/SignUp" className={({isActive})=>isActive?"underline text-yellow-300": null}>Sign up</NavLink>
+
+export default function Header() {
+  return (
+    <header className="bg-slate-900 text-white p-5">
+      <div className="flex items-center justify-between">
+        <NavLink to="/" className="text-3xl font-semibold">
+          #PostEZEN
+        </NavLink>
+        <div className="hidden md:flex space-x-8">
+          <NavLink
+            to="/SignIn"
+            className="text-xl hover:text-yellow-300"
+            activeClassName="underline text-yellow-300"
+          >
+            Login
+          </NavLink>
+          <NavLink
+            to="/SignUp"
+            className="text-xl hover:text-yellow-300"
+            activeClassName="underline text-yellow-300"
+          >
+            Sign up
+          </NavLink>
         </div>
-        </header>
-    )
+      </div>
+    </header>
+  );
 }

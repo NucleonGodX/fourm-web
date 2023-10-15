@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Data from './data';
-import About from './pages/About';
 import SignUp from './pages/auth/SignUp';
 import Layout from './components/Layout';
 import ForumPage from './pages/forumPage';
@@ -24,10 +23,7 @@ function App() {
           path: "/",
           element: <Data isAuthenticated={isAuthenticated}/>
         },
-        {
-          path: "/about",
-          element: <About />,
-        },
+
         {
           path: "/SignIn",
           element: <SignIn setIsAuthenticated={setIsAuthenticated}/>,

@@ -1,28 +1,38 @@
-import React from 'react'
-import { useParams } from "react-router-dom"
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function Post() {
-    const params=useParams()
-    const id=localStorage.getItem('newData')?JSON.parse(localStorage.getItem('newData')):JSON.parse(localStorage.getItem('data'))
-  return (
-    <div className='flex flex-col items-center  bg-black h-[70rem] '>{id.map(entry => params.id==entry.id?<div  className=' w-[50rem] bg-red my-5 px-20 py-10  bg-slate-800 flex flex-col inset-x-50 text-white'>
-        <h1>Posted by {entry.username}</h1>
-        <h1 className='text-5xl  text-yellow-400'>{entry.heading}</h1>
-          <p className='text-3xl p-5'>{entry.content}</p>          
-          <h1 className='py-5 px-5'>Comments</h1>
-          <div>
-    {entry.comments && entry.comments.user && entry.comments.sentence ? (
-      entry.comments.user.map((user, commentIndex) => (
-        <div key={commentIndex} className='px-10'>
+  const params = useParams();
+  const id = localStorage.getItem('newData')
+    ? JSON.parse(localStorage.getItem('newData'))
+    : JSON.parse(localStorage.getItem('data'));
 
-          <p>{user}</p>
-          <p className='pb-4'>{entry.comments.sentence[commentIndex]}</p>
-        </div>
-      ))
-    ) : (
-      <p>No comments</p>
-    )}
-  </div>
-        </div>:null) }</div>
-  )
+  const post = id.find((entry) => params.id === entry.id);
+
+  if (!post) {
+    return null; // Handle when the post is not found.
+  }
+
+  return (
+    <div className='flex flex-col items-center bg-black text-white min-h-screen'>
+      <div className='w-full max-w-screen-md bg-slate-800 my-5 p-4 rounded-xl'>
+        <h1 className='text-2xl font-bold'>Posted by {post.username}</h1>
+        <h1 className='text-4xl md:text-5xl text-yellow-400'>{post.heading}</h1>
+        <p className='text-base md:text-xl py-3'>{post.content}</p>
+        <h1 className='text-2xl py-3 px-4'>Comments</h1>
+        {post.comments && post.comments.user && post.comments.sentence ? (
+          <div className='p-4'>
+            {post.comments.user.map((user, commentIndex) => (
+              <div key={commentIndex} className='py-2'>
+                <p className='font-bold'>{user}</p>
+                <p>{post.comments.sentence[commentIndex]}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className='p-4'>No comments</p>
+        )}
+      </div>
+    </div>
+  );
 }
